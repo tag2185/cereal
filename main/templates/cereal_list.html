@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cereal List</title>
+	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+</head>
+<!-- we are in cereal_list.html -->
+	<body>
+		{% for manufacturer in manufacturers %}
+
+		<h2>{{ manufacturer }}</h2>
+
+			{% for cereal in manufacturer.cereal_set.all %}
+				{{ cereal }}</br>
+			{% endfor %}
+
+		{% endfor %}
+	</body>
+
+	<script type="text/javascript">
+		$(document).ready( function() {
+
+			$('body').css('background-color','orange').css('color','blue');
+
+			$('body').on('click', function() {
+				$('body').css('background-color', '#CCC');
+			});
+
+		});
+	</script>
+
+</html>
