@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block body %}
+	<h3>{{ cereal.name }}</h3>
+	<ul>
+		<li><b>Manufacturer:</b> {{ cereal.manufacturer }}</li>
+		{% for fact in cereal.nutritionfacts.nutrition_list %}
+			<li>{{ fact }}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
