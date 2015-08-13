@@ -8,7 +8,7 @@ from main.forms import CerealSearch, CreateCereal, UserSignUp, UserLogin
 from django.contrib.auth.models import User
 
 from django.db import IntegrityError
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
